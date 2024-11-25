@@ -4,12 +4,16 @@ import 'package:flutter/material.dart';
 class WorkExperienceScreen extends StatelessWidget {
   static const routeName = '/work-experience';
 
+  final TabController tabController;
+
+  WorkExperienceScreen({required this.tabController});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            body: SingleChildScrollView(
-      child: Padding(
+      // body: SingleChildScrollView(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
@@ -90,13 +94,13 @@ class WorkExperienceScreen extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, EducationDetailsScreen.routeName);
+                tabController.animateTo(2);
               },
               child: const Text("Next Step"),
             ),
           ],
         ),
       ),
-    )));
+    ));
   }
 }

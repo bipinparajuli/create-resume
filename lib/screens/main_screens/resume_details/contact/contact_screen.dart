@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 class ContactInformationScreen extends StatelessWidget {
   static const routeName = '/contact-information';
 
+  final TabController tabController;
+
+  ContactInformationScreen({required this.tabController});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -98,8 +102,7 @@ class ContactInformationScreen extends StatelessWidget {
                   Center(
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(
-                            context, WorkExperienceScreen.routeName);
+                        tabController.animateTo(1);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.orange,

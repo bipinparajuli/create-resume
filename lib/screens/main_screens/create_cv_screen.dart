@@ -18,7 +18,7 @@ class _CreateCvScreenState extends State<CreateCvScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -67,7 +67,7 @@ class _CreateCvScreenState extends State<CreateCvScreen>
                 Tab(icon: Icon(Icons.work), text: "Work Experiences"),
                 Tab(icon: Icon(Icons.school), text: "Education Details"),
                 Tab(icon: Icon(Icons.more_horiz), text: "Other Info"),
-                Tab(icon: Icon(Icons.download), text: "Save/Download"),
+                // Tab(icon: Icon(Icons.download), text: "Save/Download"),
               ],
             ),
           ),
@@ -79,10 +79,10 @@ class _CreateCvScreenState extends State<CreateCvScreen>
             child: TabBarView(
               controller: _tabController,
               children: [
-                ContactInformationScreen(),
-                WorkExperienceScreen(),
-                EducationDetailsScreen(),
-                OtherInformationScreen(),
+                ContactInformationScreen(tabController: _tabController),
+                WorkExperienceScreen(tabController: _tabController),
+                EducationDetailsScreen(tabController: _tabController),
+                OtherInformationScreen(tabController: _tabController),
                 // SaveDownloadScreen(),
               ],
             ),

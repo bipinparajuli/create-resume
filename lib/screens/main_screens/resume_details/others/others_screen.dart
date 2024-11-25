@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class OtherInformationScreen extends StatelessWidget {
   static const routeName = '/other-information';
 
+  final TabController tabController;
+
+  OtherInformationScreen({required this.tabController});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +35,7 @@ class OtherInformationScreen extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Trigger the download or final screen
+                tabController.animateTo(4);
               },
               child: const Text("Download CV"),
             ),

@@ -9,10 +9,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case SplashScreen.routeName:
       return MaterialPageRoute(builder: (context) => const SplashScreen());
-    case WorkExperienceScreen.routeName:
-      return MaterialPageRoute(builder: (context) => WorkExperienceScreen());
-    case EducationDetailsScreen.routeName:
-      return MaterialPageRoute(builder: (context) => EducationDetailsScreen());
+    // case WorkExperienceScreen.routeName:
+    //   return MaterialPageRoute(builder: (context) => WorkExperienceScreen());
+    // case EducationDetailsScreen.routeName:
+    //   return MaterialPageRoute(builder: (context) => EducationDetailsScreen());
     case CreateCvScreen.routeName:
       return MaterialPageRoute(builder: (context) => CreateCvScreen());
     default:

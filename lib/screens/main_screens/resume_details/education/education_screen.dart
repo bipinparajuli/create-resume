@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 class EducationDetailsScreen extends StatelessWidget {
   static const routeName = '/education-details';
 
+  final TabController tabController;
+
+  EducationDetailsScreen({required this.tabController});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -93,8 +97,7 @@ class EducationDetailsScreen extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                 ),
                 onPressed: () {
-                  Navigator.pushNamed(
-                      context, OtherInformationScreen.routeName);
+                  tabController.animateTo(3);
                 },
                 child: const Text("Next Step"),
               ),
